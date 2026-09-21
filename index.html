@@ -269,6 +269,10 @@
     .menu{display:none}.burger{display:block}.moon{width:76px;height:76px}
   }
   @media(max-width:520px){.films,.catalog{grid-template-columns:1fr}.cats{grid-template-columns:1fr}.foot{flex-direction:column;text-align:center}}
+  /* poster reali OMDb: nasconde testo/emoji segnaposto quando c'è l'immagine */
+  .has-poster .pn,.has-poster .big,.has-poster .sub,.has-poster .ph{display:none!important}
+  .film-poster.has-poster,.poster.has-poster,.lf-poster.has-poster,.rel .p.has-poster{color:transparent}
+  .poster.has-poster .ph{display:none}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto;animation:none!important}}
 </style>
 </head>
@@ -1100,6 +1104,49 @@
     });
     window.scrollTo({top:0,behavior:'instant'});
   }
+
+  /* ===== Poster reali via OMDb =====
+     Ogni film ha una classe-colore (p-wonder, p-panda, …) usata su card,
+     schede e correlati. Qui mappiamo ogni classe al suo IMDb ID: lo script
+     trova tutti gli elementi di quel film e ci mette la locandina ufficiale. */
+  var OMDB_KEY = 'ca60a789';
+  var FILM_IDS = {
+    'wonder'  : 'tt2543472',   // Wonder (2017)
+    'panda'   : 'tt0441773',   // Kung Fu Panda (2008)
+    'io'      : 'tt2096673',   // Inside Out (2015)
+    'star'    : 'tt4587656',   // The Star / Gli eroi del Natale (2017)
+    'marnie'  : 'tt3398268',   // Quando c'era Marnie (2014)
+    'karate'  : 'tt0087538'    // The Karate Kid (1984)
+  };
+  var posterCache = {};
+  function fetchPoster(id){
+    if(posterCache[id]) return posterCache[id];
+    posterCache[id] = fetch('https://www.omdbapi.com/?i='+id+'&apikey='+OMDB_KEY)
+      .then(function(r){return r.json();})
+      .then(function(d){ return (d && d.Poster && d.Poster!=='N/A') ? d.Poster : null; })
+      .catch(function(){ return null; });
+    return posterCache[id];
+  }
+  function applyPoster(el, url){
+    if(!url) return;
+    el.style.backgroundImage = "url('"+url+"')";
+    el.style.backgroundSize = 'cover';
+    el.style.backgroundPosition = 'center';
+    el.classList.add('has-poster');
+  }
+  function loadPosters(){
+    Object.keys(FILM_IDS).forEach(function(key){
+      var id = FILM_IDS[key];
+      // tutte le classi che identificano quel film nei vari contesti
+      var selectors = ['.p-'+key, '.poster.'+key, '.lf-poster.p-'+key+'2', '.p-'+key+'2'];
+      var nodes = document.querySelectorAll(selectors.join(','));
+      if(!nodes.length) return;
+      fetchPoster(id).then(function(url){
+        nodes.forEach(function(el){ applyPoster(el, url); });
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', loadPosters);
 </script>
 
 </body>
