@@ -137,7 +137,7 @@ export default function FilmPage({ params }) {
             {altri.map(a => (
               <Link key={a.slug} href={`/film/${a.slug}`} className="rel">
                 <div className="p"><Poster imdb={a.imdb} titolo={a.titolo} /></div>
-                <div className="b"><h3>{a.titolo}</h3><p>{a.categoria}</p></div>
+                <div className="b"><h3>{a.titolo}</h3><p>{a.categorie[0]}</p></div>
               </Link>
             ))}
           </div>

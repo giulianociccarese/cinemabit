@@ -59,6 +59,8 @@ section{padding:64px 0}
 .film-poster img{width:100%;height:100%;object-fit:cover}
 .film-poster .ph{font-family:'Fraunces',serif;font-size:22px;color:var(--oro-soft);text-align:center;padding:14px}
 .film-poster.bttf,.poster.bttf{background:linear-gradient(150deg,#c9862f,#7a1f0a)}
+.film-poster.incredibili,.poster.incredibili{background:linear-gradient(150deg,#e0362f,#8a1410)}
+.film-poster.spiderman,.poster.spiderman{background:linear-gradient(150deg,#c0392b,#1f2f6e)}
 .tag{position:absolute;top:10px;left:10px;z-index:2;background:rgba(250,247,240,.94);color:var(--blu-profondo);font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
 .film-body{padding:15px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .film-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.2;color:var(--ink)}
@@ -103,7 +105,17 @@ section{padding:64px 0}
 .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px}
 .filters a{background:rgba(255,255,255,.08);border:1px solid var(--line-dark);color:var(--crema);font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:999px;transition:.15s}
 .filters a:hover,.filters a.on{background:var(--oro);color:var(--blu-notte);border-color:var(--oro)}
-.catalog{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:52px 0}
+.catalog{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:32px 0 52px}
+/* Database: ricerca */
+.db-search{position:relative;max-width:520px;margin:26px auto 0}
+.db-search input{width:100%;padding:15px 44px 15px 20px;border-radius:999px;border:0;font-size:16px;font-family:inherit}
+.db-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:0;background:var(--line);color:var(--blu-profondo);font-size:20px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+.db-clear:hover{background:var(--oro-soft)}
+.db-count{color:var(--muted);font-size:14.5px;padding:24px 0 4px;font-weight:500}
+.db-empty{text-align:center;padding:60px 20px}
+.db-empty p{color:var(--muted);font-size:17px;margin-bottom:18px}
+.db-empty button{background:var(--oro);color:var(--blu-notte);border:0;padding:12px 24px;border-radius:999px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit}
+.db-empty button:hover{background:var(--oro-soft)}
 
 /* Scheda film */
 .crumb{background:var(--crema-2);border-bottom:1px solid var(--line);font-size:13.5px;color:var(--muted)}

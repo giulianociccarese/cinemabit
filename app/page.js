@@ -60,7 +60,7 @@ export default function Home() {
             {evidenza.map(f => (
               <Link key={f.slug} href={`/film/${f.slug}`} className="film">
                 <div className="film-poster">
-                  <span className="tag">{f.categoria}</span>
+                  <span className="tag">{f.categorie[0]}</span>
                   <Poster imdb={f.imdb} titolo={f.titolo} />
                 </div>
                 <div className="film-body">
