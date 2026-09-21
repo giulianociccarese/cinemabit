@@ -131,6 +131,14 @@
   .lf-poster.p-star2{background:linear-gradient(150deg,#1a4a7a,#0a2038);color:#ffd76a}
   .lf-poster.p-a2{background:linear-gradient(160deg,var(--oro),#c98a3a);color:#fff}
   .lf-poster.p-b2{background:linear-gradient(150deg,#2f7d32,#0e3b1a)}
+  /* poster rubriche: sfondo base neutro finché carica la locandina */
+  .lf-poster.rub-io,.lf-poster.rub-io2{background:linear-gradient(150deg,#7b3fa0,#3a1a5e)}
+  .lf-poster.rub-star{background:linear-gradient(150deg,#1a4a7a,#0a2038);color:#ffd76a}
+  .lf-poster.rub-marnie{background:linear-gradient(150deg,#4a7a5a,#183828);color:#ffe8b0}
+  .lf-poster.rub-arlo{background:linear-gradient(160deg,var(--oro),#c98a3a);color:#fff}
+  .lf-poster.rub-toy{background:linear-gradient(150deg,var(--blu),var(--blu-profondo))}
+  .lf-poster.rub-babe{background:linear-gradient(150deg,#2f7d32,#0e3b1a)}
+  .lf-poster.rub-karate{background:linear-gradient(150deg,#b5502a,#4a1508);color:#ffd76a}
   .lf-body{padding:22px 24px 22px 0;display:flex;flex-direction:column;gap:8px}
   .lf-tag{font-size:12.5px;font-weight:600;color:var(--oro);text-transform:uppercase;letter-spacing:.03em}
   .lf-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--blu-profondo);line-height:1.15}
@@ -926,7 +934,7 @@
   <div class="wrap" style="padding:52px 0">
     <div class="listfilm">
       <article class="lf">
-        <div class="lf-poster p-io2">🎈</div>
+        <div class="lf-poster rub-io2">🎈</div>
         <div class="lf-body">
           <span class="lf-tag">Animazione · Pixar</span>
           <h3>Inside Out 2</h3>
@@ -935,7 +943,7 @@
         </div>
       </article>
       <article class="lf" onclick="go('eroinatale')" style="cursor:pointer">
-        <div class="lf-poster p-star2">✝️</div>
+        <div class="lf-poster rub-star">✝️</div>
         <div class="lf-body">
           <span class="lf-tag">Animazione · Natale</span>
           <h3>Gli eroi del Natale</h3>
@@ -969,7 +977,7 @@
   <div class="wrap" style="padding:52px 0">
     <div class="listfilm">
       <article class="lf" onclick="go('insideout')" style="cursor:pointer">
-        <div class="lf-poster p-io2">🎈</div>
+        <div class="lf-poster rub-io">🎈</div>
         <div class="lf-body">
           <span class="lf-tag">Animazione · Pixar</span>
           <h3>Inside Out</h3>
@@ -978,7 +986,7 @@
         </div>
       </article>
       <article class="lf" onclick="go('marnie')" style="cursor:pointer">
-        <div class="lf-poster p-b2">🌾</div>
+        <div class="lf-poster rub-marnie">🌾</div>
         <div class="lf-body">
           <span class="lf-tag">Animazione · Studio Ghibli</span>
           <h3>Quando c'era Marnie</h3>
@@ -987,7 +995,7 @@
         </div>
       </article>
       <article class="lf">
-        <div class="lf-poster p-star2">🌟</div>
+        <div class="lf-poster rub-arlo">🌟</div>
         <div class="lf-body">
           <span class="lf-tag">Avventura · Famiglia</span>
           <h3>Il viaggio di Arlo</h3>
@@ -1012,7 +1020,7 @@
   <div class="wrap" style="padding:52px 0">
     <div class="listfilm">
       <article class="lf">
-        <div class="lf-poster p-b2">🤠</div>
+        <div class="lf-poster rub-toy">🤠</div>
         <div class="lf-body">
           <span class="lf-tag">Animazione · Pixar</span>
           <h3>Toy Story</h3>
@@ -1021,7 +1029,7 @@
         </div>
       </article>
       <article class="lf">
-        <div class="lf-poster p-io2">🐷</div>
+        <div class="lf-poster rub-babe">🐷</div>
         <div class="lf-body">
           <span class="lf-tag">Famiglia · Avventura</span>
           <h3>Babe, maialino coraggioso</h3>
@@ -1030,7 +1038,7 @@
         </div>
       </article>
       <article class="lf" onclick="go('karate')" style="cursor:pointer">
-        <div class="lf-poster p-karate2">🥋</div>
+        <div class="lf-poster rub-karate">🥋</div>
         <div class="lf-body">
           <span class="lf-tag">Formazione · Classico</span>
           <h3>I grandi maestri del cinema</h3>
@@ -1110,6 +1118,7 @@
      schede e correlati. Qui mappiamo ogni classe al suo IMDb ID: lo script
      trova tutti gli elementi di quel film e ci mette la locandina ufficiale. */
   var OMDB_KEY = 'ca60a789';
+  // Film del catalogo (card, schede, correlati)
   var FILM_IDS = {
     'wonder'  : 'tt2543472',   // Wonder (2017)
     'panda'   : 'tt0441773',   // Kung Fu Panda (2008)
@@ -1117,6 +1126,17 @@
     'star'    : 'tt4587656',   // The Star / Gli eroi del Natale (2017)
     'marnie'  : 'tt3398268',   // Quando c'era Marnie (2014)
     'karate'  : 'tt0087538'    // The Karate Kid (1984)
+  };
+  // Film che compaiono solo nelle rubriche (classe -> IMDb ID)
+  var RUB_IDS = {
+    'rub-io'     : 'tt2096673',   // Inside Out
+    'rub-io2'    : 'tt2096673',   // Inside Out 2 (usiamo il poster IO come richiamo)
+    'rub-star'   : 'tt4587656',   // Gli eroi del Natale
+    'rub-marnie' : 'tt3398268',   // Quando c'era Marnie
+    'rub-arlo'   : 'tt1979388',   // Il viaggio di Arlo / The Good Dinosaur
+    'rub-toy'    : 'tt0114709',   // Toy Story (1995)
+    'rub-babe'   : 'tt0112431',   // Babe (1995)
+    'rub-karate' : 'tt0087538'    // Karate Kid
   };
   var posterCache = {};
   function fetchPoster(id){
@@ -1135,15 +1155,25 @@
     el.classList.add('has-poster');
   }
   function loadPosters(){
+    // catalogo
     Object.keys(FILM_IDS).forEach(function(key){
       var id = FILM_IDS[key];
-      // tutte le classi che identificano quel film nei vari contesti
-      var selectors = ['.p-'+key, '.poster.'+key, '.lf-poster.p-'+key+'2', '.p-'+key+'2'];
+      var selectors = ['.p-'+key, '.poster.'+key];
       var nodes = document.querySelectorAll(selectors.join(','));
-      if(!nodes.length) return;
-      fetchPoster(id).then(function(url){
-        nodes.forEach(function(el){ applyPoster(el, url); });
-      });
+      if(nodes.length){
+        fetchPoster(id).then(function(url){
+          nodes.forEach(function(el){ applyPoster(el, url); });
+        });
+      }
+    });
+    // rubriche (classi dedicate, un poster per film)
+    Object.keys(RUB_IDS).forEach(function(cls){
+      var nodes = document.querySelectorAll('.'+cls);
+      if(nodes.length){
+        fetchPoster(RUB_IDS[cls]).then(function(url){
+          nodes.forEach(function(el){ applyPoster(el, url); });
+        });
+      }
     });
   }
   document.addEventListener('DOMContentLoaded', loadPosters);
