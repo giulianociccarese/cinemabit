@@ -230,3 +230,4 @@ footer{background:var(--blu-notte);color:var(--muted-light);padding:40px 0;font-
 .film-poster.red,.poster.red{background:linear-gradient(150deg,#e05a7a,#8a1f3a)}
 .film-poster.soul,.poster.soul{background:linear-gradient(150deg,#5a4a9e,#1f2f6e)}
 .film-poster.chosen,.poster.chosen{background:linear-gradient(150deg,#c99a3f,#5a3410)}
+.film-poster.superbook,.poster.superbook{background:linear-gradient(150deg,#3a7bd5,#7a3fb0)}
