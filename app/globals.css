@@ -222,3 +222,10 @@ footer{background:var(--blu-notte);color:var(--muted-light);padding:40px 0;font-
 }
 @media(max-width:520px){.films,.catalog{grid-template-columns:1fr}.cats{grid-template-columns:1fr}.foot{flex-direction:column;text-align:center}.lf{grid-template-columns:1fr}.lf-poster{min-height:120px}.lf-body{padding:0 20px 20px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+
+/* Filtri categoria interattivi (componente Catalogo) */
+.filters button{background:rgba(255,255,255,.08);border:1px solid var(--line-dark);color:var(--crema);font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:999px;cursor:pointer;font-family:inherit;transition:.15s}
+.filters button:hover{background:rgba(224,165,74,.25);border-color:var(--oro)}
+.filters button.on{background:var(--oro);color:var(--blu-notte);border-color:var(--oro);font-weight:600}
+.film-poster.red,.poster.red{background:linear-gradient(150deg,#e05a7a,#8a1f3a)}
+.film-poster.soul,.poster.soul{background:linear-gradient(150deg,#5a4a9e,#1f2f6e)}
