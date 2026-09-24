@@ -1,45 +1,18 @@
-import Link from 'next/link';
 import { films, categorie } from '@/lib/films';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import Poster from '@/components/Poster';
+import Catalogo from '@/components/Catalogo';
 
 export const metadata = {
-  title: 'Tutti i film',
-  description: 'Il catalogo di CinemaBit: storie scelte per la loro frequenza. Filtra per categoria e trova dove vederle.'
+  title: 'Database film',
+  description: 'Il database di CinemaBit: cerca per titolo, tema o valore, filtra per categoria e scopri dove vedere ogni film dai buoni sentimenti.'
 };
 
-export default function Catalogo() {
+export default function CatalogoPage() {
   return (
     <>
       <SiteHeader />
-      <section className="page-head">
-        <div className="wrap">
-          <h1>Tutti i film</h1>
-          <p>Il catalogo di CinemaBit: storie scelte per la loro frequenza. Filtra per categoria e trova dove vederle.</p>
-          <div className="filters">
-            {categorie.map((c, i) => (
-              <a key={i} className={i === 0 ? 'on' : ''}>{c}</a>
-            ))}
-          </div>
-        </div>
-      </section>
-      <div className="wrap">
-        <div className="catalog">
-          {films.map(f => (
-            <Link key={f.slug} href={`/film/${f.slug}`} className="film">
-              <div className="film-poster">
-                <span className="tag">{f.categoria}</span>
-                <Poster imdb={f.imdb} titolo={f.titolo} />
-              </div>
-              <div className="film-body">
-                <h3>{f.titolo}</h3>
-                <span className="where">▶ {f.dove.map(d => d.nome).join(' · ')}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <Catalogo films={films} categorie={categorie} />
       <SiteFooter />
     </>
   );
