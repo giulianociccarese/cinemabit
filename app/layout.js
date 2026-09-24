@@ -3,10 +3,10 @@ import './globals.css';
 export const metadata = {
   metadataBase: new URL('https://www.cinemabit.com'),
   title: {
-    default: 'CinemaBit — Il cinema dei buoni sentimenti',
+    default: 'CinemaBit, Il cinema dei buoni sentimenti',
     template: '%s — CinemaBit'
   },
-  description: 'Film, serie e cartoni dai buoni sentimenti — per la famiglia, che emozionano e fanno crescere. Scopri dove vederli e la loro frequenza.',
+  description: 'Film, serie e cartoni dai buoni sentimenti per la famiglia, che emozionano e fanno crescere. Scopri dove vederli e la loro frequenza.',
   openGraph: {
     title: 'CinemaBit — Il cinema dei buoni sentimenti',
     description: 'Belle storie che fanno crescere. Le trovi tutte qui.',
