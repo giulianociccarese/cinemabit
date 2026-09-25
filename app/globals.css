@@ -231,3 +231,15 @@ footer{background:var(--blu-notte);color:var(--muted-light);padding:40px 0;font-
 .film-poster.soul,.poster.soul{background:linear-gradient(150deg,#5a4a9e,#1f2f6e)}
 .film-poster.chosen,.poster.chosen{background:linear-gradient(150deg,#c99a3f,#5a3410)}
 .film-poster.superbook,.poster.superbook{background:linear-gradient(150deg,#3a7bd5,#7a3fb0)}
+
+/* Menu mobile (hamburger) */
+.menu-toggle{display:none;background:transparent;border:0;color:var(--crema);font-size:26px;line-height:1;cursor:pointer;padding:4px 8px;margin-left:auto}
+@media(max-width:920px){
+  .menu-toggle{display:block}
+  .nav{position:relative;flex-wrap:wrap}
+  .nav-cta{display:none}
+  .menu{display:none;flex-direction:column;gap:0;width:100%;order:3;margin-top:8px;border-top:1px solid var(--line-dark)}
+  .menu.open{display:flex}
+  .menu a{padding:14px 4px;border-bottom:1px solid var(--line-dark);font-size:16px;color:var(--crema)}
+  .menu a:last-child{border-bottom:0}
+}
