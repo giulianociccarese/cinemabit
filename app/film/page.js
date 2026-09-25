@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { films, categorie } from '@/lib/films';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -12,7 +13,9 @@ export default function CatalogoPage() {
   return (
     <>
       <SiteHeader />
-      <Catalogo films={films} categorie={categorie} />
+      <Suspense fallback={null}>
+        <Catalogo films={films} categorie={categorie} />
+      </Suspense>
       <SiteFooter />
     </>
   );

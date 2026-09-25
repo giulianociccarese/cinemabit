@@ -5,14 +5,14 @@ import SiteFooter from '@/components/SiteFooter';
 import Poster from '@/components/Poster';
 
 const catBox = [
-  { ico: '🎬', t: 'Film', d: 'Al cinema, in streaming, DVD e Blu-ray.' },
-  { ico: '📺', t: 'Serie e telefilm', d: 'Storie lunghe da vivere in famiglia.' },
-  { ico: '✨', t: 'Cartoni animati', d: 'Animazione classica e nuove tecnologie.' },
-  { ico: '⚡', t: 'Supereroi positivi', d: 'Eroi che ispirano con l\'esempio.' },
-  { ico: '★', t: 'Grandi classici', d: 'I capolavori che non invecchiano.' },
-  { ico: '✝️', t: 'Valori e spirito', d: 'Fede, speranza e crescita interiore.' },
-  { ico: '👨‍👩‍👧‍👦', t: 'Per la famiglia', d: 'Da guardare tutti insieme.' },
-  { ico: '🗂️', t: 'Database film', d: 'Cerca, filtra e trova dove vedere.' }
+  { ico: '🎬', t: 'Film', d: 'Al cinema, in streaming, DVD e Blu-ray.', link: '/film' },
+  { ico: '📺', t: 'Serie e telefilm', d: 'Storie lunghe da vivere in famiglia.', link: '/serie' },
+  { ico: '✨', t: 'Cartoni animati', d: 'Animazione classica e nuove tecnologie.', link: '/film?cat=Animazione' },
+  { ico: '⚡', t: 'Supereroi positivi', d: 'Eroi che ispirano con l\'esempio.', link: '/film?cat=Supereroi positivi' },
+  { ico: '★', t: 'Grandi classici', d: 'I capolavori che non invecchiano.', link: '/film?cat=Grandi classici' },
+  { ico: '✝️', t: 'Valori e spirito', d: 'Fede, speranza e crescita interiore.', link: '/film?cat=Valori e spirito' },
+  { ico: '👨‍👩‍👧‍👦', t: 'Per la famiglia', d: 'Da guardare tutti insieme.', link: '/film?cat=Famiglia' },
+  { ico: '🗂️', t: 'Database film', d: 'Cerca, filtra e trova dove vedere.', link: '/film' }
 ];
 
 export default function Home() {
@@ -29,11 +29,11 @@ export default function Home() {
             <h1>Belle storie che <span className="soft">fanno crescere</span>. Le trovi tutte qui.</h1>
             <p>Film, serie e cartoni dai messaggi positivi — per la famiglia, che emozionano e fanno bene. Dai grandi classici ai titoli di oggi. Scegliamo il cinema per quello che lascia dentro chi lo guarda.</p>
             <div className="hero-tags">
-              <Link href="/film">Famiglia</Link>
-              <Link href="/film">Animazione</Link>
-              <Link href="/film">Valori</Link>
-              <Link href="/film">Supereroi positivi</Link>
-              <Link href="/film">Grandi classici</Link>
+              <Link href="/film?cat=Famiglia">Famiglia</Link>
+              <Link href="/film?cat=Animazione">Animazione</Link>
+              <Link href="/film?cat=Valori e spirito">Valori</Link>
+              <Link href="/film?cat=Supereroi positivi">Supereroi positivi</Link>
+              <Link href="/film?cat=Grandi classici">Grandi classici</Link>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function Home() {
           <div className="sec-head"><h2>Cosa trovi su CinemaBit</h2><p>Un mondo di storie positive, in ogni formato e per ogni schermo.</p></div>
           <div className="cats">
             {catBox.map((c, i) => (
-              <Link key={i} href="/film" className="cat"><div className="ico">{c.ico}</div><h3>{c.t}</h3><p>{c.d}</p></Link>
+              <Link key={i} href={c.link} className="cat"><div className="ico">{c.ico}</div><h3>{c.t}</h3><p>{c.d}</p></Link>
             ))}
           </div>
         </div>

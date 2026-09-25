@@ -1,12 +1,15 @@
 'use client';
 import { useState, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Poster from '@/components/Poster';
 
 // Database film interattivo: ricerca + filtri per categoria, lato client.
 export default function Catalogo({ films, categorie }) {
   const [q, setQ] = useState('');
-  const [cat, setCat] = useState('Tutti');
+  const searchParams = useSearchParams();
+  const catIniziale = searchParams.get('cat') || 'Tutti';
+  const [cat, setCat] = useState(catIniziale);
 
   const risultati = useMemo(() => {
     const query = q.trim().toLowerCase();
