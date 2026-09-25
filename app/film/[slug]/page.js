@@ -56,7 +56,7 @@ export default function FilmPage({ params }) {
               {f.dove.map((d, i) => (
                 <a key={i} href={streamingLink(d.nome, f.titolo)} target="_blank" rel={isAffiliato(d.nome) ? "sponsored noopener noreferrer" : "noopener noreferrer"}>▶ {d.nome}</a>
               ))}
-              <a className="buy" href={amazonLink(f.titolo, f.anno)} target="_blank" rel="sponsored noopener noreferrer">🛒 DVD / Blu-ray su Amazon</a>
+              <a className="buy" href={amazonLink(f.titolo)} target="_blank" rel="sponsored noopener noreferrer">🛒 DVD / Blu-ray su Amazon</a>
             </div>
           </div>
         </div>

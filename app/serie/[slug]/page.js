@@ -53,7 +53,7 @@ export default function SeriePage({ params }) {
               {s.dove.map((d, i) => (
                 <a key={i} href={streamingLink(d.nome, s.titolo)} target="_blank" rel={isAffiliato(d.nome) ? "sponsored noopener noreferrer" : "noopener noreferrer"}>▶ {d.nome}</a>
               ))}
-              <a className="buy" href={amazonLink(s.titolo, s.anno)} target="_blank" rel="sponsored noopener noreferrer">🛒 DVD su Amazon</a>
+              <a className="buy" href={amazonLink(s.titolo)} target="_blank" rel="sponsored noopener noreferrer">🛒 DVD su Amazon</a>
             </div>
           </div>
         </div>
