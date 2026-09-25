@@ -4,6 +4,7 @@ import { films, getFilm, getAllSlugs, correlati } from '@/lib/films';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import Poster from '@/components/Poster';
+import { amazonLink } from '@/lib/affiliazione';
 
 // Genera una pagina statica per ogni film (ottimo per la SEO)
 export function generateStaticParams() {
@@ -55,7 +56,7 @@ export default function FilmPage({ params }) {
               {f.dove.map((d, i) => (
                 <a key={i}>▶ {d.nome}</a>
               ))}
-              <a className="buy">🛒 DVD / Blu-ray su Amazon</a>
+              <a className="buy" href={amazonLink(f.titolo, f.anno)} target="_blank" rel="sponsored noopener noreferrer">🛒 DVD / Blu-ray su Amazon</a>
             </div>
           </div>
         </div>

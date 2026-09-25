@@ -4,6 +4,7 @@ import { getSerie, getAllSerieSlugs } from '@/lib/serie';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import Poster from '@/components/Poster';
+import { amazonLink } from '@/lib/affiliazione';
 
 export function generateStaticParams() {
   return getAllSerieSlugs().map(slug => ({ slug }));
@@ -52,6 +53,7 @@ export default function SeriePage({ params }) {
               {s.dove.map((d, i) => (
                 <a key={i}>▶ {d.nome}</a>
               ))}
+              <a className="buy" href={amazonLink(s.titolo, s.anno)} target="_blank" rel="sponsored noopener noreferrer">🛒 DVD su Amazon</a>
             </div>
           </div>
         </div>
