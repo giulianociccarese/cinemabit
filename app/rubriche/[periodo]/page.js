@@ -5,6 +5,8 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import Poster from '@/components/Poster';
 
+export const revalidate = 86400; // ricalcola la data ogni 24 ore
+
 export function generateStaticParams() {
   return getRubricaSlugs().map(periodo => ({ periodo }));
 }
