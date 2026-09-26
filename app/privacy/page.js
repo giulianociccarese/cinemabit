@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       </section>
       <div className="man-body">
         <h2>Titolare del trattamento</h2>
-        <p>Il titolare del trattamento dei dati raccolti tramite questo sito è il responsabile di CinemaBit. Per qualsiasi richiesta relativa ai tuoi dati puoi scrivere all'indirizzo di contatto indicato in fondo alla pagina.</p>
+        <p>Il titolare del trattamento dei dati raccolti tramite questo sito è <strong>Giuliano Ciccarese</strong> (Vigevano, Italia). Per qualsiasi richiesta relativa ai tuoi dati puoi scrivere a <a href="mailto:giuliano@ciccarese.com">giuliano@ciccarese.com</a>.</p>
 
         <h2>Quali dati raccogliamo</h2>
         <p>CinemaBit non richiede la registrazione e non raccoglie dati personali identificativi in modo diretto. Se acconsenti, utilizziamo strumenti di statistica anonima (Google Analytics 4) per capire quante persone visitano il sito, da quali pagine e attraverso quali canali, al solo scopo di migliorare i contenuti e l'esperienza di navigazione.</p>
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         <p>In base al Regolamento Europeo GDPR hai diritto ad accedere ai tuoi dati, chiederne la rettifica o la cancellazione, opporti al trattamento e revocare il consenso in qualsiasi momento. Puoi modificare la tua scelta sui cookie cancellando i dati del sito dal tuo browser: al successivo accesso ti verrà nuovamente chiesto il consenso.</p>
 
         <h2>Contatti</h2>
-        <p>Per esercitare i tuoi diritti o per qualsiasi domanda sul trattamento dei dati, puoi contattare il titolare all'indirizzo email indicato nel sito. Questa informativa può essere aggiornata: ti invitiamo a consultarla periodicamente.</p>
+        <p>Per esercitare i tuoi diritti o per qualsiasi domanda sul trattamento dei dati, puoi contattare il titolare Giuliano Ciccarese all'indirizzo <a href="mailto:giuliano@ciccarese.com">giuliano@ciccarese.com</a>. Questa informativa può essere aggiornata: ti invitiamo a consultarla periodicamente.</p>
       </div>
       <SiteFooter />
     </>
