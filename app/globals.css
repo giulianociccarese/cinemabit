@@ -251,3 +251,16 @@ footer{background:var(--blu-notte);color:var(--muted-light);padding:40px 0;font-
 .film-poster.pocahontas,.poster.pocahontas{background:linear-gradient(150deg,#c9862f,#6a3a1a)}
 .film-poster.babe,.poster.babe{background:linear-gradient(150deg,#d98a9e,#7a3a4e)}
 .film-poster.casper,.poster.casper{background:linear-gradient(150deg,#6a8ab0,#2f4a6e)}
+
+/* Banner consenso cookie */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--blu-notte);border-top:1px solid var(--oro);box-shadow:0 -10px 40px -10px rgba(0,0,0,.5)}
+.cookie-inner{max-width:1140px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cookie-inner p{color:rgba(250,247,240,.85);font-size:14px;line-height:1.55;margin:0;flex:1;min-width:260px}
+.cookie-inner a{color:var(--oro-soft);text-decoration:underline}
+.cookie-actions{display:flex;gap:12px;flex-shrink:0}
+.cookie-no,.cookie-yes{border:0;padding:11px 22px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
+.cookie-no{background:transparent;color:var(--muted-light);border:1px solid var(--line-dark)}
+.cookie-no:hover{color:var(--crema);border-color:var(--crema)}
+.cookie-yes{background:var(--oro);color:var(--blu-notte)}
+.cookie-yes:hover{background:var(--oro-soft)}
+@media(max-width:520px){.cookie-inner{flex-direction:column;align-items:stretch;text-align:center}.cookie-actions{justify-content:center}}

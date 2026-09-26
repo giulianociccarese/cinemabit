@@ -10,6 +10,7 @@ export default function SiteFooter() {
             <Link href="/">Home</Link>
             <Link href="/film">Film</Link>
             <Link href="/serie">Serie</Link>
+            <Link href="/privacy">Privacy e Cookie</Link>
             <Link href="/metodo">Il nostro metodo</Link>
             <Link href="/#community">Community</Link>
           </nav>
